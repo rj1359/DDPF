@@ -146,7 +146,7 @@ class Model(nn.Module):
         att_stt_out = torch.cat((att_t_out, att_st_out), dim=-1)
 
         ht = att_t_out.new_zeros(att_t_out[:, 0, :, :].shape)
-        for i in range(1, att_g_out.shape[1]):
+        for i in range(0, att_g_out.shape[1]):
             tensor1 = att_stt_out[:, i, :, :]
             tensor2 = att_s_out[:, i, :, :]
             tensor3 = att_g_out[:, i, :, :]
