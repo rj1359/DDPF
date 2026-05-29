@@ -103,7 +103,7 @@ class Model(nn.Module):
         self.residual_proj = nn.Linear(train_shape[-1], self.head_out * len(self.head_t_ahead))
 
         self.xhr_GRU = nn.ModuleList(
-            [CustomGRUCell(6 * self.head_out * len(self.head_t_ahead), self.head_out * len(self.head_t_ahead), train_shape[1]) for i in range(11)]
+            [CustomGRUCell(6 * self.head_out * len(self.head_t_ahead), self.head_out * len(self.head_t_ahead), train_shape[1]) for i in range(12)]
         )
 
         self.last_GRU = nn.ModuleList(
